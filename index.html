@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Frederic AKADJE | Data Scientist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="logo"> <span class="logo-text">FA</span>
+            </a>
+            <nav class="desktop-nav" id="mainNav">
+                 <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#experience" onclick="smoothScroll('#experience'); closeMobileMenu();">Expérience</a></li>
+                    <li><a href="#education" onclick="smoothScroll('#education'); closeMobileMenu();">Formation</a></li>
+                    <li><a href="projects.html" onclick="closeMobileMenu();">Projets</a></li>
+                    <li><a href="#contact" onclick="smoothScroll('#contact'); closeMobileMenu();">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobileMenuIcon">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times" style="display: none;"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-container"> <div class="hero-content">
+                <span class="intro">Bonjour, je suis</span>
+                <h1>Frederic AKADJE</h1>
+                <h2>Data Scientist | Data Analyst</h2>
+                <p>
+                    Passionné par la résolution de problèmes, les mathématiques, l’analyse de données et l’intelligence artificielle,
+                Je suis actuellement à la recherche d’un stage dans le cadre de mon projet de fin d’études, avec l’objectif de 
+                contribuer à des projets à fort impact .
+                </p>
+                <div class="buttons">
+                    <button class="btn contact-btn" onclick="smoothScroll('#contact')">Me contacter</button>
+                    <a href="assets/pdf/CV FREDERIC AKADJE.pdf" target="_blank" class="btn cv-btn">CV Français</a>
+                    <a href="assets/pdf/CV AKADJE FREDERIC En.pdf" target="_blank" class="btn cv-btn">CV Anglais </a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/frederic-1034a4183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Welfare1" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-photo-container">
+                 <img src="assets/images/image-pic.png" alt="Photo de Frederic AKADJE" class="hero-photo">
+            </div>
+             </div>
+    </section>
+
+    <main>
+        <section id="experience" class="section-padding">
+            <div class="container">
+                <h3 class="section-title">Expérience professionnelle</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-content">
+                            <span class="date">Novembre 2024 - Février 2025</span>
+                            <h4>Alternance : Analyste quantitatif / Data scientist</h4>
+                            <p class="company">TOP DOWN ADIVORY (Paris) - à distance</p>
+                            <p>Création de modèles de prédiction de churn client avec Python/Scikit-learn, analyse exploratoire et visualisation des résultats.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                       <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                       <div class="timeline-content">
+                            <span class="date">Mai 2022 - Janvier 2023</span>
+                            <h4>Stage: Data Analyst </h4>
+                            <p class="company">Continental Beverage company</p>
+                            <p>Développement de dashboards Power BI pour le suivi des KPIs marketing, nettoyage et préparation de données SQL.</p>
+                        </div>
+                    <!-- </div>
+                     <div class="timeline-item">
+                       <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                       <div class="timeline-content">
+                            <span class="date">Juillet 2021 - Août 2021</span>
+                            <h4>Stagiaire Machine Learning</h4>
+                            <p class="company">AI Research Lab</p>
+                            <p>Implémentation d'algorithmes de NLP (analyse de sentiments) sur des avis clients en utilisant NLTK et SpaCy.</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section-padding alt-bg">
+             <div class="container">
+                <h3 class="section-title">Formation académique</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                         <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                         <div class="timeline-content">
+                            <span class="date">2023 - 2025 (Prévu)</span>
+                            <h4>Master Data Science</h4>
+                            <p class="school">Université Felix Houphouët Boigny</p>
+                            <p>Spécialisation en Machine Learning, Deep Learning et Big Data (Apache Spark, cloud comp & storage).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="timeline-content">
+                           <span class="date">2022 - 2023 </span>
+                           <h4>Master 1 Probabilités Statistiques</h4>
+                           <p class="school">Université Felix Houphouët Boigny</p>
+                           <p>Stats maths & Bayésiennes• Chaînes de markov & martingales • Mathématiques fondamentales • Optimisation ...</p>
+                       </div>
+                   </div>
+                    <div class="timeline-item">
+                         <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                         <div class="timeline-content">
+                            <span class="date">2019 - 2020</span>
+                            <h4>Licence Mathématiques Appliquées</h4>
+                            <p class="school">Université Felix Houphouët Boigny</p>
+                            <p>Algèbres • Analyses• Optimisation • probabilités avancées • programmation linéaire ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-padding">
+             <div class="container">
+                <h3 class="section-title">Projets Récents</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="assets/images/credit-scoring.png" alt="Projet Analyse Données Médicales">
+                        <div class="project-content">
+                            <h4>Analyse de Données Médicales</h4>
+                            <p>Classification d'images de tumeurs (simulation sur dataset MNIST) avec CNNs via TensorFlow/Keras.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span> <span class="tag">TensorFlow</span> <span class="tag">CNN</span>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/images/cocoa-project.webp" alt="Projet Dashboard Financier">
+                         <div class="project-content">
+                            <h4>Dashboard Financier Interactif</h4>
+                            <p>Visualisation de données boursières et indicateurs clés avec Tableau Prep et Tableau Desktop.</p>
+                             <div class="tech-tags">
+                                <span class="tag">Tableau</span> <span class="tag">SQL</span> <span class="tag">DataViz</span>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/images/price-project.png" alt="Projet Chatbot NLP">
+                         <div class="project-content">
+                            <h4>Chatbot de Support Client</h4>
+                            <p>Développement d'un chatbot basé sur Rasa pour répondre aux questions fréquentes d'un site e-commerce fictif.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span> <span class="tag">Rasa</span> <span class="tag">NLP</span>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    </div><div class="voir-plus-container">
+                    <a href="projects.html" class="btn voir-plus-btn">Voir tous les projets <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding alt-bg">
+             <div class="container">
+                <h3 class="section-title">Contactez-moi</h3>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <p>Intéressé(e) par mon profil ou un projet ? N'hésitez pas à m'envoyer un message ou à me retrouver sur les réseaux sociaux.</p>
+                         <div class="social-icons-contact">
+                            <a href="https://www.linkedin.com/in/frederic-1034a4183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Welfare1" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                             <label for="email">Votre Email</label>
+                            <input type="email" id="email" placeholder="exemple@email.com" required>
+                        </div>
+                         <div class="form-group">
+                             <label for="message">Votre Message</label>
+                            <textarea id="message" placeholder="Votre message ici..." rows="5" required></textarea>
+                         </div>
+                        <button type="submit" class="btn contact-btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear">2025</span> Frederic AKADJE. Tous droits réservés.</p> </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

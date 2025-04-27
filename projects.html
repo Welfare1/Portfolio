@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Frederic AKADJE</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="logo"> <span class="logo-text">FA</span>
+            </a>
+            <nav class="desktop-nav" id="mainNav">
+                 <ul>
+                    <li><a href="index.html">Accueil</a></li> <li><a href="index.html#experience" onclick="closeMobileMenu();">Expérience</a></li> <li><a href="index.html#education" onclick="closeMobileMenu();">Formation</a></li>
+                    <li><a href="projects.html" class="active">Projets</a></li> <li><a href="index.html#contact" onclick="closeMobileMenu();">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobileMenuIcon">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times" style="display: none;"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-padding"> <section id="all-projects">
+             <div class="container">
+                <h1 class="page-title">Mes Projets</h1> <p class="page-intro">Découvrez ci-dessous l'ensemble des projets sur lesquels j'ai travaillé, illustrant mes compétences en Data Science, Machine Learning et analyse de données.</p>
+
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="images/project1.jpg" alt="Projet Analyse Données Médicales">
+                        <div class="project-content">
+                            <h4>Analyse de Données Médicales</h4>
+                            <p>Classification d'images de tumeurs (simulation sur dataset MNIST) avec CNNs via TensorFlow/Keras.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span> <span class="tag">TensorFlow</span> <span class="tag">CNN</span>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/project2.jpg" alt="Projet Dashboard Financier">
+                        <div class="project-content">
+                            <h4>Dashboard Financier Interactif</h4>
+                            <p>Visualisation de données boursières et indicateurs clés avec Tableau Prep et Tableau Desktop.</p>
+                             <div class="tech-tags">
+                                <span class="tag">Tableau</span> <span class="tag">SQL</span> <span class="tag">DataViz</span>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/project3.jpg" alt="Projet Chatbot NLP">
+                        <div class="project-content">
+                            <h4>Chatbot de Support Client</h4>
+                            <p>Développement d'un chatbot basé sur Rasa pour répondre aux questions fréquentes d'un site e-commerce fictif.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span> <span class="tag">Rasa</span> <span class="tag">NLP</span>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                         <img src="images/project4.jpg" alt="Projet 4 Description">
+                        <div class="project-content">
+                            <h4>Optimisation Logistique</h4>
+                            <p>Modélisation et simulation pour optimiser les itinéraires de livraison en utilisant des algorithmes heuristiques.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span> <span class="tag">OR-Tools</span> <span class="tag">Simulation</span>
+                            </div>
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                     <div class="project-card">
+                         <img src="images/project5.jpg" alt="Projet 5 Description">
+                        <div class="project-content">
+                            <h4>Analyse de Sentiments Twitter</h4>
+                            <p>Collecte de tweets via l'API Twitter et analyse de sentiments en temps réel sur un sujet donné.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span> <span class="tag">Tweepy</span> <span class="tag">NLTK</span> <span class="tag">API</span>
+                            </div>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                     <div class="project-card">
+                         <img src="images/project6.jpg" alt="Projet 6 Description">
+                        <div class="project-content">
+                            <h4>Système de Recommandation</h4>
+                            <p>Implémentation d'un système de recommandation de films basé sur le filtrage collaboratif (Surprise lib).</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span> <span class="tag">Surprise</span> <span class="tag">Recommandation</span>
+                            </div>
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    </div></div> </section>
+    </main>
+
+     <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Frederic AKADJE. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

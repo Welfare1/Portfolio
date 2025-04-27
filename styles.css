@@ -1,0 +1,806 @@
+/* === Réinitialisation et Variables === */
+:root {
+  /* Palette Moderne & Tech */
+  --primaire: #1D2D50; /* Bleu nuit profond */
+  --secondaire: #F8F9FA; /* Gris très clair / Blanc cassé */
+  --accent: #1ABC9C; /* Turquoise vif */
+  --cta-orange: #FF6B35; /* Orange pour les boutons principaux */
+  --texte-principal: #34495E; /* Gris foncé */
+  --texte-secondaire: #5a6a7a; /* Gris moyen */
+  --texte-blanc: #FFFFFF;
+  --fond-alt: #FFFFFF; /* Fond alternatif (blanc pur) */
+  --bordure: #e0e0e0;
+  --ombre-legere: rgba(0, 0, 0, 0.07);
+  --ombre-moyenne: rgba(0, 0, 0, 0.12);
+  --ombre-forte: rgba(0, 0, 0, 0.18);
+
+  /* Fonts */
+  --font-principal: 'Montserrat', sans-serif;
+
+  /* Transitions */
+  --transition-rapide: all 0.2s ease-in-out;
+  --transition-standard: all 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Permet le smooth scroll natif */
+}
+
+body {
+  font-family: var(--font-principal);
+  line-height: 1.7;
+  color: var(--texte-principal);
+  background-color: var(--secondaire);
+  font-size: 16px; /* Base font size */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition-rapide);
+}
+
+a:hover {
+  color: var(--primaire);
+}
+
+h1, h2, h3, h4 {
+  color: var(--primaire);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h1 { font-size: 3rem; letter-spacing: -1px; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; } /* Section titles */
+h4 { font-size: 1.2rem; font-weight: 600; color: var(--texte-principal)} /* Card/Item titles */
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.alt-bg {
+    background-color: var(--fond-alt);
+}
+
+/* === Header === */
+#mainHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--texte-blanc);
+  z-index: 1000;
+  box-shadow: 0 2px 15px var(--ombre-legere);
+  transition: var(--transition-standard);
+  padding: 1rem 0;
+}
+
+#mainHeader.scrolled {
+    box-shadow: 0 5px 20px var(--ombre-moyenne);
+    padding: 0.8rem 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo .logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primaire);
+    text-decoration: none;
+}
+/* Style pour le SVG si tu le gardes
+.logo svg { width: 45px; height: auto; } */
+
+.desktop-nav ul {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.desktop-nav a {
+  color: var(--texte-principal);
+  font-weight: 600;
+  padding: 0.5rem 0;
+  position: relative;
+  text-decoration: none;
+}
+/* Effet de soulignement au survol */
+.desktop-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+.desktop-nav a:hover {
+    color: var(--primaire); /* Garder la couleur ou l'assombrir */
+}
+
+.mobile-menu {
+  display: none; /* Caché par défaut sur desktop */
+  font-size: 1.8rem;
+  color: var(--primaire);
+  cursor: pointer;
+}
+
+/* === Hero Section === */
+.hero {
+  background: linear-gradient(135deg, var(--primaire) 0%, #2C3E50 100%);
+  color: var(--texte-blanc);
+  min-height: 100vh; /* Prend au moins toute la hauteur de l'écran */
+  display: flex;
+  align-items: center;
+  padding-top: 100px; /* Espace pour le header fixe */
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden; /* Pour effets de fond potentiels */
+}
+
+.hero-content {
+  max-width: 650px; /* Limite la largeur du texte */
+  animation: fadeIn Hero 1s ease-out forwards;
+}
+@keyframes fadeInHero {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-container {
+  display: flex;
+  align-items: center; /* Centre les enfants verticalement */
+  justify-content: space-between; /* Espace entre texte et photo */
+  gap: 2rem; /* Espace entre texte et photo */
+  width: 100%; /* Prend toute la largeur du container principal */
+}
+
+.hero-content {
+  max-width: 600px; /* Légère réduction potentielle pour laisser place photo */
+  flex: 1 1 60%; /* Permet au texte de prendre plus de place */
+  animation: fadeInHeroText 1s ease-out forwards; /* Renommé pour clarté */
+}
+/* Animation spécifique pour le texte */
+@keyframes fadeInHeroText {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Styles pour le conteneur de la photo */
+.hero-photo-container {
+  flex: 1 1 35%; /* La photo prend moins de place que le texte */
+  display: flex; /* Pour centrer l'image si besoin */
+  justify-content: center; /* Centre l'image horizontalement dans son conteneur */
+  align-items: center; /* Centre l'image verticalement */
+  animation: fadeInHeroPhoto 1.2s ease-out 0.3s forwards; /* Animation photo + délai */
+  opacity: 0; /* Commence invisible pour l'animation */
+}
+/* Animation spécifique pour la photo */
+@keyframes fadeInHeroPhoto {
+   from { opacity: 0; transform: scale(0.9) translateY(20px); }
+   to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+
+.hero-photo {
+  max-width: 100%; /* L'image ne dépassera pas son conteneur */
+  height: auto;
+  max-height: 70vh; /* Limite la hauteur pour ne pas être immense */
+  object-fit: contain; /* Garde les proportions */
+  /* Ajoute une ombre portée subtile adaptée aux PNG sans fond */
+  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.25));
+}
+
+/* === Responsive pour la photo dans le Hero === */
+
+@media (max-width: 991px) {
+  .hero-container {
+      flex-direction: column; /* Passe en colonne sur tablette/mobile */
+      text-align: center; /* Centre le texte quand c'est en colonne */
+      gap: 1rem;
+  }
+
+  .hero-content {
+      max-width: 100%; /* Le texte prend toute la largeur */
+      flex-basis: auto; /* Reset flex-basis */
+      order: 2; /* Met le texte APRÈS la photo en affichage colonne */
+      margin-top: 2rem; /* Espace sous la photo */
+  }
+   /* Centre les boutons sur mobile/tablette */
+   .hero-content .buttons {
+       justify-content: center;
+   }
+   /* Centre les icones sociales */
+   .hero-content .social-icons {
+       justify-content: center;
+   }
+   /* Reset l'animation texte pour mobile si besoin ou ajuste la */
+   @keyframes fadeInHeroText {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-photo-container {
+      flex-basis: auto; /* Reset flex-basis */
+      order: 1; /* Met la photo AVANT le texte */
+      max-width: 300px; /* Réduit la taille max de la photo sur mobile/tablette */
+      margin: 0 auto; /* Centre le conteneur photo */
+  }
+  /* Reset l'animation photo pour mobile si besoin ou ajuste la */
+   @keyframes fadeInHeroPhoto {
+       from { opacity: 0; transform: scale(0.9) translateY(20px); }
+       to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+}
+
+/* Optionnel: Cacher complètement la photo sur très petits écrans si besoin */
+/* @media (max-width: 576px) {
+  .hero-photo-container {
+      display: none;
+  }
+   .hero-content {
+       margin-top: 0;
+   }
+} */
+
+.hero-content .intro {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-content h1 {
+  color: var(--texte-blanc);
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+  font-size: 1.6rem; /* Un peu plus petit que h1 */
+  color: var(--accent); /* Utilise la couleur accent */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 550px; /* Limite la largeur du paragraphe */
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Pour les petits écrans */
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-standard);
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.contact-btn {
+  background: var(--cta-orange);
+  color: var(--texte-blanc);
+}
+.contact-btn:hover {
+  background: #FF8A5C; /* Version éclaircie */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+}
+
+.cv-btn {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+.cv-btn:hover {
+  background: var(--accent);
+  color: var(--texte-blanc);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
+}
+
+.social-icons a {
+  color: var(--texte-blanc);
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  opacity: 0.8;
+}
+.social-icons a:hover {
+  opacity: 1;
+  color: var(--accent);
+  transform: scale(1.1);
+}
+.social-icons a:last-child {
+    margin-right: 0;
+}
+
+/* Optionnel: Style pour l'image hero */
+.hero-image {
+    position: absolute; /* Positionnement absolu si tu veux la mettre sur le côté */
+    right: 5%;
+    bottom: 0; /* Ou aligné verticalement */
+    width: 45%;
+    max-width: 500px;
+    /* Ajoute des effets si tu veux */
+    /* filter: grayscale(50%); */
+    /* opacity: 0.8; */
+}
+
+/* === Section Title === */
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--accent);
+}
+
+/* === Timeline (Expérience / Formation) === */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* La ligne verticale */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px; /* Ou 50% si centré */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--bordure);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 55px; /* Espace pour l'icône */
+}
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent);
+  color: var(--texte-blanc);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 1; /* Au dessus de la ligne */
+  border: 3px solid var(--secondaire); /* Pour détacher du fond */
+}
+.alt-bg .timeline-icon {
+    border-color: var(--fond-alt); /* Adapte la bordure au fond */
+}
+
+.timeline-content .date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--texte-secondaire);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.timeline-content h4 {
+    margin-bottom: 0.3rem;
+    color: var(--primaire); /* Titre plus sombre */
+}
+
+.timeline-content .company,
+.timeline-content .school {
+    font-weight: 600;
+    color: var(--texte-principal);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p:last-of-type {
+    margin-bottom: 0; /* Pas de marge en bas pour la description */
+}
+
+
+/* === Projets === */
+.project-grid {
+  display: grid;
+  /* Responsive grid: 1 colonne sur petit écran, 2 sur moyen, 3 sur large */
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  background: var(--fond-alt);
+  border-radius: 8px;
+  overflow: hidden; /* Pour que l'image ne dépasse pas */
+  box-shadow: 0 5px 20px var(--ombre-legere);
+  transition: var(--transition-standard);
+  display: flex;
+  flex-direction: column; /* Pour que le lien soit en bas */
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px var(--ombre-moyenne);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px; /* Hauteur fixe pour l'image */
+  object-fit: cover; /* Assure que l'image couvre la zone */
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Permet au contenu de prendre l'espace restant */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content h4 {
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: var(--texte-secondaire);
+    flex-grow: 1; /* Pousse les tags et le lien vers le bas */
+    margin-bottom: 1rem;
+}
+
+.tech-tags {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.tech-tags .tag {
+    background-color: rgba(26, 188, 156, 0.1); /* Fond léger couleur accent */
+    color: var(--accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.project-link {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  align-self: flex-start; /* Aligne le lien à gauche */
+}
+.project-link i {
+    margin-left: 0.3rem;
+    transition: transform 0.2s ease;
+}
+.project-link:hover {
+    color: var(--primaire);
+}
+.project-link:hover i {
+    transform: translateX(4px);
+}
+
+/* === Contact === */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 colonne par défaut */
+    gap: 3rem;
+    align-items: start; /* Aligne les éléments en haut */
+}
+
+@media (min-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr 1fr; /* 2 colonnes sur écrans moyens/grands */
+    }
+}
+
+.contact-info p {
+    margin-bottom: 1.5rem;
+    color: var(--texte-secondaire);
+}
+.contact-info .social-icons-contact a {
+    color: var(--primaire);
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    opacity: 0.9;
+}
+.contact-info .social-icons-contact a:hover {
+    color: var(--accent);
+    opacity: 1;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--texte-principal);
+}
+
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--bordure);
+  border-radius: 5px;
+  font-family: inherit; /* Utilise la police du body */
+  font-size: 1rem;
+  transition: var(--transition-rapide);
+}
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.2);
+}
+.contact-form textarea {
+    resize: vertical; /* Permet le redimensionnement vertical */
+    min-height: 120px;
+}
+
+/* === Footer === */
+footer {
+  background-color: var(--primaire);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer p {
+    margin-bottom: 0;
+}
+
+/* === Responsive Design === */
+@media (max-width: 991px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-content h2 { font-size: 1.4rem; }
+}
+
+@media (max-width: 767px) {
+    body { font-size: 15px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.5rem; }
+    .section-padding { padding: 60px 0; }
+
+    /* Mobile Menu Activation */
+    .desktop-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Caché par défaut */
+        width: 80%; /* Largeur du panneau */
+        max-width: 320px;
+        height: 100vh;
+        background: var(--texte-blanc);
+        z-index: 999;
+        transition: right 0.4s ease-in-out;
+        flex-direction: column; /* Mettre les liens en colonne */
+        padding-top: 80px; /* Espace pour le logo/fermeture */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        border-left: 1px solid var(--bordure);
+        display: flex; /* Toujours flex pour la direction colonne */
+    }
+    .desktop-nav.mobile-nav-active {
+        right: 0; /* Faire apparaître */
+    }
+    .desktop-nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem 0;
+        gap: 0; /* Reset gap */
+        text-align: center;
+    }
+    .desktop-nav li {
+        width: 100%;
+    }
+    .desktop-nav a {
+        display: block;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        color: var(--primaire); /* Texte sombre sur fond blanc */
+        border-bottom: 1px solid var(--bordure);
+    }
+     .desktop-nav a:hover {
+        background-color: var(--secondaire);
+        color: var(--accent);
+    }
+     .desktop-nav a::after { /* Cacher l'effet de soulignement sur mobile */
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block; /* Afficher l'icône burger */
+        z-index: 1001; /* Au dessus du panneau */
+    }
+
+    .hero {
+        min-height: auto; /* Ajuste la hauteur */
+        padding: 120px 0 60px; /* Plus de padding haut/bas */
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-content p {
+        max-width: 100%;
+        margin: 0 auto 2rem auto; /* Centrer le paragraphe */
+    }
+    .buttons {
+        justify-content: center; /* Centrer les boutons */
+    }
+    .hero-image {
+        display: none; /* Cacher l'image sur mobile */
+    }
+
+    .timeline::before { left: 15px; } /* Rapprocher la ligne */
+    .timeline-item { padding-left: 45px; }
+    .timeline-icon { width: 30px; height: 30px; font-size: 1rem; left: 0; }
+
+    .contact-container {
+        grid-template-columns: 1fr; /* Forcer 1 colonne */
+        gap: 2rem;
+    }
+    .contact-info { text-align: center; }
+}
+
+/* === Styles pour la page Projets dédiée === */
+
+.page-padding {
+    padding-top: 120px; /* Espace pour le header fixe */
+    padding-bottom: 80px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--primaire);
+}
+
+.page-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3.5rem auto; /* Centre et ajoute marge en bas */
+    font-size: 1.1rem;
+    color: var(--texte-secondaire);
+}
+
+/* Ajustement grille projet si besoin sur la page projet */
+/* #all-projects .project-grid { */
+    /* Tu peux garder les mêmes règles que sur l'index */
+    /* ou les adapter si tu as beaucoup de projets */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+/* } */
+
+/* === Style pour le bouton "Voir plus" sur index.html === */
+
+.voir-plus-container {
+    text-align: center;
+    margin-top: 3rem; /* Espace après la grille des projets */
+}
+
+.voir-plus-btn {
+    /* Style similaire au bouton CV mais peut-être plus discret */
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    transition: var(--transition-standard);
+}
+.voir-plus-btn i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.voir-plus-btn:hover {
+    background: var(--accent);
+    color: var(--texte-blanc);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
+}
+.voir-plus-btn:hover i {
+    transform: translateX(5px);
+}
+
+
+/* === Style pour le lien de navigation ACTIF === */
+.desktop-nav a.active {
+    color: var(--primaire); /* Couleur plus marquée pour l'actif */
+    font-weight: 700;
+}
+.desktop-nav a.active::after { /* Soulignement permanent pour l'actif */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primaire); /* Soulignement plus marqué */
+}
+
+/* Style actif pour le menu mobile */
+@media (max-width: 767px) {
+    .desktop-nav a.active {
+        background-color: var(--secondaire); /* Fond léger pour l'actif */
+        color: var(--accent); /* Couleur accent pour l'actif */
+        font-weight: 700;
+    }
+}
