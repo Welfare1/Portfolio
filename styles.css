@@ -464,6 +464,72 @@ ul {
     margin-bottom: 0; /* Pas de marge en bas pour la description */
 }
 
+/* === Styles pour la Section Compétences === */
+
+.skills-grid {
+  display: grid;
+  /* Crée des colonnes réactives: minimum 250px de large, autant que possible sur une ligne */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem; /* Espace entre les cartes */
+  margin-top: 3rem; /* Espace après le titre de section */
+}
+
+.skill-card {
+  background-color: var(--fond-alt); /* Fond blanc (ou --secondaire si tu préfères) */
+  padding: 2rem 1.5rem; /* Padding intérieur */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: var(--ombre-legere); /* Ombre discrète */
+  text-align: center; /* Centre le contenu de la carte */
+  transition: var(--transition-standard); /* Pour l'effet de survol */
+  border: 1px solid var(--bordure); /* Bordure très légère */
+}
+
+.skill-card:hover {
+  transform: translateY(-6px); /* Soulève légèrement la carte */
+  box-shadow: var(--ombre-moyenne); /* Ombre plus prononcée */
+  border-color: var(--accent); /* Change la couleur de bordure au survol */
+}
+
+.skill-icon {
+  margin-bottom: 1rem; /* Espace sous l'icône */
+}
+
+.skill-icon i {
+  color: var(--accent); /* Couleur de l'icône */
+  /* La taille est définie par fa-2x dans le HTML, mais peut être ajustée ici */
+  /* font-size: 2.5rem; */
+}
+
+.skill-card h4 {
+  margin-bottom: 0.8rem; /* Espace sous le titre de la compétence */
+  color: var(--primaire); /* Couleur du titre */
+  font-size: 1.1rem; /* Taille du titre */
+  font-weight: 600;
+}
+
+.skill-card p {
+  font-size: 0.9rem; /* Taille du texte des outils */
+  color: var(--texte-secondaire); /* Couleur du texte */
+  line-height: 1.6; /* Hauteur de ligne */
+  margin-bottom: 0; /* Enlève la marge par défaut du paragraphe */
+}
+
+.skill-card p strong {
+  color: var(--texte-principal); /* Met en évidence les noms d'outils */
+  font-weight: 600; /* Police un peu plus grasse */
+}
+
+/* Ajustement responsive si nécessaire */
+@media (max-width: 576px) {
+  .skills-grid {
+      /* Passe explicitement à 1 colonne sur très petits écrans si auto-fit ne suffit pas */
+      grid-template-columns: 1fr;
+  }
+  .skill-card {
+      padding: 1.5rem; /* Réduit légèrement le padding */
+  }
+}
+
 
 /* === Projets === */
 .project-grid {
