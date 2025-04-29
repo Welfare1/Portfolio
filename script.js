@@ -61,13 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 5. Contact Form Submission (Simulation) ---
     if (contactForm) {
+        emailjs.init(EMAILJS_USER_ID); // Utilise la variable sécurisée
+    
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Empêche l'envoi réel
-            console.log('Formulaire soumis (simulation)');
-            // Ici, tu ajouterais normalement du code pour envoyer les données
-            // par ex. avec fetch() vers un backend ou un service comme Formspree
-            alert('Message envoyé avec succès ! Je vous répondrai bientôt.');
-            this.reset(); // Vide le formulaire
+            e.preventDefault(); // Empêche l'envoi classique
+    
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+            .then(function(response) {
+                console.log('Formulaire soumis avec succès !', response.status, response.text);
+                alert('Message envoyé avec succès ! Je vous répondrai bientôt.');
+                contactForm.reset(); // Vide le formulaire après envoi
+            }, function(error) {
+                console.error('Erreur lors de l\'envoi du formulaire :', error);
+                alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+            });
         });
     }
 

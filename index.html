@@ -253,7 +253,7 @@
 
         <section id="contact" class="section-padding alt-bg">
              <div class="container">
-                <h3 class="section-title">Contactez-moi (ne fonctionne pas actuellement 😇)</h3>
+                <h3 class="section-title">Contactez-moi </h3>
                 <div class="contact-container">
                     <div class="contact-info">
                         <p>Intéressé(e) par mon profil ou un projet ? N'hésitez pas à m'envoyer un message ou à me retrouver sur les réseaux sociaux.</p>
@@ -262,14 +262,14 @@
                             <a href="https://github.com/Welfare1" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
-                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/Akadje37@gmail.com" method="POST">
+                    <form id="contactForm" class="contact-form" >
                         <div class="form-group">
                              <label for="email">Votre Email</label>
-                            <input type="email" id="email" placeholder="exemple@email.com" required>
+                            <input type="email" id="email" name="name" placeholder="exemple@email.com" required>
                         </div>
                          <div class="form-group">
                              <label for="message">Votre Message</label>
-                            <textarea id="message" placeholder="Votre message ici..." rows="5" required></textarea>
+                            <textarea id="message" name="message" placeholder="Votre message ici..." rows="5" required></textarea>
                          </div>
                         <button type="submit" class="btn contact-btn">Envoyer le message</button>
                     </form>
@@ -282,7 +282,8 @@
         <div class="container">
             <p>&copy; <span id="currentYear">2025</span> Frederic AKADJE. Tous droits réservés.</p> </div>
     </footer>
-
+    <script src="config.js"></script> <!-- En premier -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- EmailJS -->
     <script src="script.js"></script>
 </body>
 </html>
