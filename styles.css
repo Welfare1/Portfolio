@@ -692,6 +692,128 @@ footer p {
     margin-bottom: 0;
 }
 
+/* === Styles pour la Page Articles === */
+
+#article-list {
+  /* Utilise les classes .page-padding, .container, .page-title, .page-intro */
+}
+
+.article-grid {
+  display: grid;
+  /* Même grille réactive que pour les projets/compétences */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* Espace entre les cartes */
+  margin-top: 3.5rem; /* Espace après l'intro */
+}
+
+.article-card {
+  background-color: var(--fond-alt); /* Fond blanc */
+  border-radius: 8px;
+  overflow: hidden; /* Cache le débordement si image */
+  box-shadow: var(--ombre-legere);
+  transition: var(--transition-standard);
+  display: flex;
+  flex-direction: column; /* Pour aligner le contenu */
+  border: 1px solid var(--bordure);
+}
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ombre-moyenne);
+  border-color: var(--accent);
+}
+
+/* Optionnel: Style pour miniature */
+.article-thumbnail {
+  width: 100%;
+  height: 180px; /* Hauteur fixe pour miniature */
+  object-fit: cover;
+}
+
+.article-card-content {
+  padding: 1.5rem;
+  flex-grow: 1; /* Prend l'espace restant */
+  display: flex;
+  flex-direction: column;
+}
+
+.article-meta {
+  margin-bottom: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--texte-secondaire);
+  display: flex;
+  flex-wrap: wrap; /* Pour passer à la ligne si besoin */
+  gap: 0.3rem 1rem; /* Espace vertical et horizontal entre éléments meta */
+  align-items: center;
+}
+.article-meta .date {
+  /* Styles spécifiques date si besoin */
+  white-space: nowrap; /* Empêche la date de se couper */
+}
+.article-meta .date i {
+  margin-right: 0.3rem; /* Espace icône calendrier */
+}
+
+/* Utilise le même style de tag que pour les projets */
+.article-meta .tag {
+  background-color: rgba(26, 188, 156, 0.1);
+  color: var(--accent);
+  padding: 0.1rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: inline-block; /* Nécessaire pour padding */
+}
+
+.article-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.article-card h3 a {
+  color: var(--primaire);
+  text-decoration: none; /* Enlève soulignement par défaut */
+  transition: color 0.2s ease;
+}
+.article-card h3 a:hover {
+  color: var(--accent);
+}
+
+.article-excerpt {
+  font-size: 0.95rem;
+  color: var(--texte-secondaire);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Pousse le lien "Lire la suite" vers le bas */
+
+  /* Optionnel: Limiter le nombre de lignes de l'extrait */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limite à 3 lignes */
+  -webkit-box-orient: vertical;
+}
+
+.read-more-link {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  align-self: flex-start; /* Aligne à gauche */
+  text-decoration: none;
+}
+.read-more-link i {
+  margin-left: 0.3rem;
+  transition: transform 0.2s ease;
+}
+.read-more-link:hover {
+  color: var(--primaire);
+}
+.read-more-link:hover i {
+  transform: translateX(4px);
+}
+
 /* === Responsive Design === */
 @media (max-width: 991px) {
     h1 { font-size: 2.5rem; }

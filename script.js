@@ -110,33 +110,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 7. Active Navigation Link Highlighting ---
     if (mainNav) {
-        const currentLocation = window.location.pathname.split('/').pop(); // Ex: 'projects.html', 'index.html', ou ''
+        const currentLocation = window.location.pathname.split('/').pop(); // Ex: 'articles.html', 'index.html', etc.
         const navLinks = mainNav.querySelectorAll('a');
 
         navLinks.forEach(link => {
             const linkHref = link.getAttribute('href');
-            if (!linkHref) return; // Ignore les liens sans href
+            if (!linkHref) return;
 
-            const linkPage = linkHref.split('/').pop().split('#')[0]; // Nom du fichier (ex: 'projects.html')
-            const linkAnchor = linkHref.includes('#') ? '#' + linkHref.split('#')[1] : null; // Ancre (ex: '#experience')
+            const linkPage = linkHref.split('/').pop().split('#')[0];
+            const linkAnchor = linkHref.includes('#') ? '#' + linkHref.split('#')[1] : null;
 
-            link.classList.remove('active'); // Enlève 'active' de tous
+            link.classList.remove('active');
 
-            // Cas 1: Page actuelle correspond au lien (ex: sur projects.html et lien vers projects.html)
+            // Cas 1: Page actuelle correspond au lien direct (ex: sur articles.html et lien vers articles.html)
             if (linkPage !== '' && currentLocation === linkPage && !linkAnchor) {
                  link.classList.add('active');
             }
             // Cas 2: Sur la page d'accueil (index.html ou /) et lien vers l'accueil
-            else if ((currentLocation === 'index.html' || currentLocation === '') && (linkPage === 'index.html' || linkHref === 'index.html')) {
-                 // Ne pas mettre actif si c'est un lien avec ancre comme "index.html#experience"
+            else if ((currentLocation === 'index.html' || currentLocation === '') && (linkPage === 'index.html' || linkHref === 'index.html' || linkHref === '#')) {
                  if (!linkAnchor) {
                     link.classList.add('active');
                  }
             }
-            // Cas 3: Sur la page d'accueil et le lien est juste "#" (considéré comme Accueil)
-             else if ((currentLocation === 'index.html' || currentLocation === '') && linkHref === '#') {
-                  link.classList.add('active');
+             // Cas spécial pour le lien "Accueil" quand on est sur index.html ou à la racine
+             // Ceci est redondant avec le Cas 2 mais clarifie
+             else if ((currentLocation === 'index.html' || currentLocation === '') && linkHref === 'index.html') {
+                 link.classList.add('active');
              }
+
         });
     }
 
