@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Études - Frederic AKADJE</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4F2VDFVN2Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4F2VDFVN2Q');
+</script>
+<body>
+    
+    <header id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">FA</span>
+            </a>
+            <nav class="desktop-nav" id="mainNav">
+                 <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#experience" onclick="closeMobileMenu();">Expérience</a></li>
+                    <li><a href="index.html#education" onclick="closeMobileMenu();">Formation</a></li>
+                    <li><a href="projects.html" onclick="closeMobileMenu();">Projets</a></li>
+                    <li><a href="articles.html" class="active">Articles</a></li> <li><a href="index.html#contact" onclick="closeMobileMenu();">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobileMenuIcon">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times" style="display: none;"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-padding">
+        <section id="article-list">
+             <div class="container">
+                <h1 class="page-title">Articles & Études</h1>
+                <p class="page-intro">Retrouvez ici mes publications, explorations techniques, et études de cas issues de mes notebooks d'analyse et d'expérimentation.</p>
+
+                <div class="article-grid">
+
+                    <article class="article-card">
+                        <div class="article-card-content">
+                             <div class="article-meta">
+                                <span class="date"><i class="fas fa-calendar-alt"></i> 14 Mai 2025</span>
+                                <span class="tag">Notebook</span>
+                                <span class="tag">Credit Scoring</span>
+                            </div>
+                            <h3>
+                                <a href="assets/articles/notebook_model_.html">
+                                    Crédit scoring dans le secteur bancaire africain
+                                </a>
+                            </h3>
+                            <p class="article-excerpt">
+                                User case de la construction d'un modèle de scoring de crédit pour le secteur bancaire africain, à l'aide de techniques de machine learning.
+                            </p>
+                            <a href="assets/articles/notebook_model_.html" class="read-more-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                     <article class="article-card">
+                        <div class="article-card-content">
+                             <div class="article-meta">
+                                <span class="date"><i class="fas fa-calendar-alt"></i> 15 Mai 2025</span>
+                                <span class="tag">Overall</span>
+                                <span class="tag">Scoring with ML</span>
+                            </div>
+                            <h3>
+                                <a href="assets/articles/overall.html">
+                                    Décidez Mieux, Plus Vite : Le Scoring à l'Ère de l’Intelligence Artificielle
+                                </a>
+                            </h3>
+                            <p class="article-excerpt">
+                                Découvrez comment le scoring par machine learning soutient la performance des organisations en objectivant les décisions.
+                            </p>
+                            <a href="assets/articles/overall.html" class="read-more-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                     <article class="article-card">
+                        <div class="article-card-content">
+                             <div class="article-meta">
+                                <span class="date"><i class="fas fa-calendar-alt"></i> 1 Mai 2025</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">OpenCV</span>
+                            </div>
+                            <h3>
+                                <a href="articles/detection-objets-opencv.html">
+                                    Introduction à la Détection d'Objets Simples avec OpenCV (En cours de rédaction)
+                                </a>
+                            </h3>
+                            <p class="article-excerpt">
+                                Un notebook présentant les bases de la détection de contours et de formes géométriques simples dans des images en utilisant Python et OpenCV...
+                            </p>
+                             <a href="articles/detection-objets-opencv.html" class="read-more-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                     </div></div> </section>
+    </main>
+
+     <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Frederic AKADJE. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
