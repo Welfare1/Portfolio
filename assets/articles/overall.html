@@ -470,6 +470,28 @@
             }
         }
         */
+        .header-image-placeholder {
+        width: [Largeur_du_placeholder]; /* Remplacez par la largeur réelle, ex: 800px */
+        height: [Hauteur_du_placeholder]; /* Remplacez par la hauteur réelle, ex: 400px */
+        overflow: hidden; /* Empêche l'image de déborder si elle est plus grande */
+        }
+
+        .header-image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Fait en sorte que l'image couvre le conteneur, peut rogner */
+        }
+        .image-placeholder {
+        width: [Largeur_du_placeholder]; /* Remplacez par la largeur réelle, ex: 800px */
+        height: [Hauteur_du_placeholder]; /* Remplacez par la hauteur réelle, ex: 400px */
+        overflow: hidden; /* Empêche l'image de déborder si elle est plus grande */
+        }
+        .image-placeholder img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover; /* Fait en sorte que l'image couvre le conteneur, peut rogner */
+        }
+
     </style>
 
 
@@ -498,7 +520,7 @@
 <div class="blog-post-content-wrapper">
     <div class="blog-article-container">
         <header class="article-header">
-            <div class="header-image-placeholder">SUGGESTION IMAGE : Flux de données se transformant en graphique de performance clair</div>
+            <div class="header-image-placeholder"><img src="../images/score-illus1.png" alt="Flux de données se transformant en graphique de performance clair" class="header-image"></div>
             <h1>Décidez mieux, Plus vite : Le scoring à l'Ère de l’Intelligence Artificielle</h1>
             <p class="subtitle">Comprendre comment le scoring transforme vos données en décisions impactantes. <strong> – Frederic AKADJE</strong></p>
         </header>
@@ -506,9 +528,10 @@
         <article class="main-content">
             <section id="introduction">
                 <h2>Le scoring par Machine Learning, Votre boussole prédictive</h2>
-                <p>Oublions les formules mathématiques complexes pour l'instant. Pensez au scoring ML comme à un système intelligent qui attribue un "score" numérique à chaque entité clé de votre écosystème : un client, une transaction, une demande de crédit, une machine industrielle, un prospect commercial, etc.</p>
+                <p>Dans un monde où les données sont devenues aussi stratégiques que les actifs financiers, la capacité à évaluer, prioriser et anticiper les comportements ou les risques est cruciale. C’est précisément ce que permet le scoring via le Machine Learning (ML) : attribuer un "score" numérique à chaque entité clé de votre écosystème, un client, une transaction, une demande de crédit, une machine industrielle, un prospect commercial, etc.</p>
                 <p>Ce score n'est pas un simple chiffre ; c'est une probabilité calculée basée sur l'analyse de toutes les données historiques pertinentes. Le Machine Learning permet aux algorithmes d'apprendre des modèles, des corrélations et des signaux faibles dans ces vastes ensembles de données, des patterns que l'intuition humaine seule ne pourrait jamais détecter.</p>
-                <div class="image-placeholder">SUGGESTION IMAGE : Silhouette de dirigeant devant un dashboard interactif avec des scores.</div>
+                <div class="image-placeholder"><img src="../images/score-illus2.png" alt="Silhouette de dirigeant devant un dashboard interactif avec des scores" class="header-image"></div>
+                
                 <p>En résumé, le scoring ML vous dit :</p>
                     <ul>
                     <li>Quelle est la probabilité qu'un client achète ce nouveau produit ? <strong>(Scoring Client/Marketing)</strong></li>
@@ -528,7 +551,7 @@
                 <h3>La Réalité Opérationnelle : Observer sans pouvoir prédire</h3>
                 <p>Ces dashboards étaient utiles, indispensable même. Ils permettaient de constater la situation à un instant T : X millions de FCFA sont dus, Y clients ont dépassé leur échéance de Z jours, le portefeuille est concentré sur telle catégorie de clients. C'était une photographie précise de l'arriéré.</p>
                 <p>Mais très vite, une limite est apparue : les dashboards montraient qui devait quoi et depuis quand, mais ils ne disaient pas en avance qui allait réellement payer, qui nécessiterait une relance musclée, ou qui était un cas "facile" qui allait se régulariser seul.</p>
-                <div class="image-placeholder">SUGGESTION IMAGE : Schéma simplifié : Données d'entrée -> Modèle ML (boîte "Régression Logistique") -> Score de probabilité.</div>
+                <div class="image-placeholder"><img src="../images/score-illus3.png" alt="factures impayées" class="header-image"></div>
 
                 <h3>Le "Et Si..." : L'apport révélateur du scoring</h3>
                 <p>Voir les données, comprendre les montants en jeu, mais ressentir cette limite dans la prédiction, ne pas savoir à l'avance, qui allait vraiment payer sans effort colossal, a été un déclic majeur. Ces frustrations constructives qui m'ont poussé, juste après ma licence,
@@ -536,8 +559,8 @@
                 <p>Alors comment passer de cette observation passive de l'arriéré à une action proactive et ciblée ?</p>
 
                 <p> <strong>L'idée :</strong> associer à chaque créance, ou mieux, à chaque client débiteur, un <strong>"Score de probabilité de recouvrement"</strong>. Un score calculé non pas à l'intuition, mais par des modèles capables d'apprendre des caractéristiques complexes dans l'historique des données, de manière automatique.</p>
-                
-                <div class="image-placeholder">SUGGESTION IMAGE : Schéma simplifié : Données d'entrée -> Modèle ML (boîte "Régression Logistique") -> Score de probabilité.</div>
+
+                <div class="image-placeholder"><img src="../images/score-illus4.png" alt="Schéma simplifié : Données d'entrée -> Modèle ML (boîte 'Régression Logistique') -> Score de probabilité" class="header-image"></div>
 
                 <p>Ce score ne sortirait pas de nulle part. Il serait le résultat d'un modèle de Machine Learning qui analyserait en continu toutes les données disponibles :</p>
                 <ul>
@@ -567,7 +590,7 @@
                              avec beaucoup plus de précision, mieux gérer le BFR (Besoin en Fonds de Roulement), anticiper les besoins de financement, et prendre des décisions stratégiques éclairées (investissements, distribution, etc.). Au-delà du recouvrement, les scores peuvent même remonter des informations précieuses pour la politique commerciale : quels types de clients ou de ventes génèrent le plus de risque de non-paiement ? Faut-il ajuster les conditions de vente ?</p>
                     </div>
                 </div>
-                <div class="image-placeholder">SUGGESTION IMAGE : Icônes stylisées pour chaque avantage (loupe, fusée, cible, ampoule, base de données).</div>
+                <div class="image-placeholder"><img src="../images/score-illus5.webp" alt="Schéma simplifié : Données d'entrée -> Modèle ML (boîte 'Régression Logistique') -> Score de probabilité" class="header-image"></div>
             </section>
 
             <section id="applications">
@@ -621,7 +644,7 @@
                  C'est un outil de pilotage stratégique à part entière que chaque dirigeant devrait comprendre pour naviguer avec succès dans le paysage économique actuel.</p>
             <p class="cta-prompt"><strong>N'hésitez pas à me laisser vos avis et questions 😊</strong></p>
             <a href="../../index.html#contact" onclick="smoothScroll('#contact'); closeMobileMenu();" class="cta-button">Discutons de vos besoins en scoring</a>
-            <div class="image-placeholder">SUGGESTION IMAGE : Visuel inspirant : graphique ascendant ou équipe célébrant.</div>
+            <div class="image-placeholder"><img src="../images/score-illus6.avif" alt="Schéma simplifié : Données d'entrée -> Modèle ML (boîte 'Régression Logistique') -> Score de probabilité" class="header-image"></div>
         </section>
     </div>
 </div>
